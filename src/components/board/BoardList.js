@@ -33,7 +33,7 @@ const BoardList = () => {
       })
   },[])
   // function getBoardList() {
-  //   axios.get('http://localhost:8080/board')
+  //   axios.get('https://jub.sionms.co.kr/board')
   //     .then(function( response) {
   //       setBoardList(response.data);
   //   })

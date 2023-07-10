@@ -107,7 +107,7 @@ function ChallengeCreate({ visible, onCancel }) {
     }
     // console.log(JSON.stringify(obj))
     if(confirmed) {
-      fetch("http://13.209.48.33:8080/challenge", {
+      fetch("https://jub.sionms.co.kr/challenge", {
         method: "POST",
         headers: {
           "Content-type": "application/json; charset=utf-8", Authorization: `Bearer ${getItem('ACCESS_TOKEN')}`

@@ -148,7 +148,7 @@ function ChallengeSchedule({ visible, onCancel,mapList,setMapList }) {
     // console.log(JSON.stringify(obj))
     if(confirmed) {
       try {
-        fetch("http://13.209.48.33:8080/ploggingCreate", {
+        fetch("https://jub.sionms.co.kr/ploggingCreate", {
           method: "POST",
           headers: {
             "Content-type": "application/json; charset=utf-8", Authorization: `Bearer ${getItem('ACCESS_TOKEN')}`

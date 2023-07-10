@@ -45,7 +45,7 @@ const Reward = () => {
    * @Brief 기부하기 기능
    */
   const createDonation = () => {
-    fetch("http://localhost:8080/history/Donation", {
+    fetch("https://jub.sionms.co.kr/history/Donation", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=utf-8",
@@ -74,7 +74,7 @@ const Reward = () => {
    * @Brief 랜덤박스 신청
    */
   const createProduct = () => {
-    fetch("http://localhost:8080/history/Product", {
+    fetch("https://jub.sionms.co.kr/history/Product", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=utf-8",

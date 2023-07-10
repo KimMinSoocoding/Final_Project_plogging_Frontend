@@ -30,7 +30,7 @@ const BoardRegisterOrEdit = (props) => {
 
   useEffect(() => {
     if(attach) {
-      fileInputRef.current.src = `http://localhost:8080/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`;
+      fileInputRef.current.src = `https://jub.sionms.co.kr/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`;
       inputFilebtn.current.style.display = "none"
       priviewImg.current.style.display = "flex"
     }
@@ -70,7 +70,7 @@ const BoardRegisterOrEdit = (props) => {
       priviewImg.current.src = fileReader.result;
     }
     console.log(fileData)
-    await axios.post('http://localhost:8080/attach/upload', fileData, {
+    await axios.post('https://jub.sionms.co.kr/attach/upload', fileData, {
       headers : {
         "Content-Type" : "multipart/form-data",
       }
@@ -126,7 +126,7 @@ const BoardRegisterOrEdit = (props) => {
                   <span>사진을 첨부해 주세요</span>
                 </div>
                 {attach ? (
-                  <img className="attach-preview" ref={priviewImg} src={`http://localhost:8080/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`} alt="plogging" />
+                  <img className="attach-preview" ref={priviewImg} src={`https://jub.sionms.co.kr/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`} alt="plogging" />
                 ) :(
                   <img className="attach-preview" ref={priviewImg} src={image} alt="미리보기" />
                 )}

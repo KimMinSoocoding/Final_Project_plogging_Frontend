@@ -188,7 +188,7 @@ const BoardDetailLayout = (data) => {
                 }}>
           <div className="ninjadash-blog-thumb">
             {attach ? (
-              <img className="ninjadash-blog__image" src={`http://localhost:8080/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`} alt="plogging" />
+              <img className="ninjadash-blog__image" src={`https://jub.sionms.co.kr/attach/display?uuid=${attach.uuid}&path=${attach.path}&ext=${attach.ext}&filename=${attach.filename}`} alt="plogging" />
             ) :(
               <img className="ninjadash-blog__image" src={image} alt="테스트용" />
             )
