@@ -89,7 +89,7 @@
 
 
 ## 🕰️ 개발 기간
-:calendar: 23.05.22 - 22.06.30일 총 5주간 진행
+:calendar: 23.05.22 - 23.06.30일 총 5주간 진행
 * 1주차 : 자료선정 및 자료수집
 * 2주차 : 요구사항 분석과 설계
 * 3~4주차 : 기능구현
@@ -145,6 +145,36 @@
 
 <br>
 
+## 시작 가이드
+
+### Requirements
+
+Backend
+
+- [Java version 1.8](https://www.oracle.com/java/technologies/downloads/#java17)
+- SpringBoot 2.7.14(SNAPSHOT)
+- Gradle - Groovy
+
+Frontend
+
+- node.js with npm
+
+### Installation
+
+Backend
+
+```bash
+$ git clone https://github.com/plogging-project/Plogging_Project_Backend.git
+```
+
+Frontend
+
+```bash
+$ git clone https://github.com/plogging-project/Plogging_Project_Frontend.git
+```
+
+<br>
+
 ## :laughing: 프로젝트 설명
 ### :pushpin: 주제선정 동기
 - :one: 기능적 요구 1 : **다양한 외부 API의 사용과 공공 데이터 활용**
@@ -184,6 +214,83 @@
 <br>
 <br>
 
+## 아키텍쳐
+
+### 디렉토리 구조
+
+Backend
+
+```bash
+├── gradle/wrapper
+├── src
+│   ├── main
+│   │   ├── java/city/olooe/plogging_project
+│   │   │    ├── config : WebMvcConfig 및 WebSecurityConfig 설정
+│   │   │    ├── controller
+│   │   │    ├── dto
+│   │   │    ├── model
+│   │   │    ├── filter
+│   │   │    ├── persistence
+│   │   │    ├── security : 시큐리티 및 Oauth2.0 설정
+│   │   │    ├── service
+│   │   │    └── PloggingProjectApplication.java : 프로젝트 실행 파일
+│   │   └── resources
+│   │           ├── application.yml : 기본 설정 파일 (추가 필요)
+│   │           ├── application-datasource.yml : DataBase 설정 (추가 필요)
+│   │           ├── application-mail.yml : Gmail 인증 설정 (추가 필요)
+│   │           ├── application-oauth2.yml : Oauth2.0 설정 (추가 필요)
+│   │           ├── prgrms.cer : Java keytool
+│   │           ├── prgrms_keystore.p12 : Java keytool
+│   │           └── prgrms_truststore.p12 : Java keytool
+│   └── test/java/city/olooe/plogging_project : Junit test
+├── upload/2023
+├── .gitignore
+├── README.md
+├── build.gradle
+└── settings.gradle
+```
+
+Frontend
+
+```bash
+├── .idea
+├── public
+├── src
+│   ├── components
+│   ├── config
+│   │     ├── api
+│   │     └── dataService : dataService.js - Backend server 연결 설정
+│   ├── container
+│   │     ├── pages : 모든 페이지 컴포넌트
+│   │     └── profile : 회원 관련 페이지 컴포넌트
+│   ├── demoData : 초기 템플릿 활용시 demodata
+│   ├── i18n
+│   ├── layout : top메뉴 및 sidebar
+│   ├── redux : redux 관련
+│   ├── routes : react-router-dom 관련
+│   ├── static : css 및 이미지
+│   ├── utility
+│   │     ├── plogging : geolocation api
+│   │     └── localStorageControl.js : 쿠키 설정
+│   ├── App.js
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .env : URL 및 API key 설정
+├── .eslintignore
+├── .eslintrc
+├── .gitignore
+├── .prettierrc
+├── README.md
+├── craco.config.js
+├── customize-cra-config.js
+├── package-lock.json
+├── package.json
+└── yarn.lock
+```
+<br>
+
 ## :notebook: 각 페이지별 기능 구성 및  모바일 / 컴퓨터 UI 화면
 ### :pushpin: Index 페이지 : SPA React를 사용하여 UX친화적인 Front 구성
 - 반응형 웹 디자인이 적용된 형태
@@ -202,7 +309,13 @@
 - 경유지를 포함한 보행자 경로 표현 
 - 경로명, 경로설명, 출발지 주소를 통한 추천경로 검색
 - Pagination된 검색결과
+
 <img width="800" alt="image" src="https://github.com/KimMinSoocoding/-Final_project_plogging_Backend/assets/113892151/a1571d1a-0641-4e4d-b2fa-30502db9e36f">
+
+<br>
+
+https://github.com/KimMinSoocoding/Final_project_plogging_Backend/assets/113892151/e7a467ec-7229-4c05-bbed-dce4186b1002
+
 <br>
 
 ### :pushpin: Community 페이지 : 플로깅 완료 시 자동으로 인증 글 작성 페이지
